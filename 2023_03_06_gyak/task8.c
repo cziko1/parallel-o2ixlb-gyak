@@ -6,6 +6,7 @@
 void int_arrf(int arr[], int n);
 int length_arr(int max, int min); 
 void double_arrf(double arr[], int n);
+long int findSize(char file_name[]);
 
 
 int main(){
@@ -28,18 +29,40 @@ int main(){
     double darr[n];
     double_arrf(darr,n);
 
-    FILE *f = fopen("arr.file", "wb");
+    FILE *f = fopen("arr.file", "wb");          //fajlba iras
     fwrite(arr, sizeof(char), sizeof(arr), f);    
     fclose(f);
 
+    char file_name[] ={"arr.file"};
+    long int res=findSize(file_name);
+    if(res!=-1)
+        printf("Size of the file is %ld bytes\n", res);
     return 0;
 }
+long int findSize(char file_name[]){
+    FILE* fp = fopen(file_name, "r");
+    if(fp == NULL){
+        printf("File not Found!\n");
+        return -1;
+    }
+
+    fseek(fp, 0L, SEEK_END);
+
+    //kiszamolja a fájl meretet
+    long int res = ftell(fp);
+    
+    //bezarja a fajlt
+    fclose(fp);
+
+    return res;
+}
+
 int length_arr(int max, int min){   // tomb hossza fogveny ket bekert szelso ertek kozott es ez randomizalva
     int n;
     n=(rand()%(max-min+1)+min);
     return n; 
 }
-void int_arrf(int arr[], int n){    //tomb fugvenye
+void int_arrf(int arr[], int n){    //tomb fuggvenye
     int i;
     int max, min;       // segedvaltozok
 
@@ -56,7 +79,7 @@ void int_arrf(int arr[], int n){    //tomb fugvenye
     }
 }
 
-void double_arrf(double arr[], int n){    //tomb fugvenye
+void double_arrf(double arr[], int n){    //tomb fuggvenye
     int i;
     double max, min, random;       // segedvaltozok
 
