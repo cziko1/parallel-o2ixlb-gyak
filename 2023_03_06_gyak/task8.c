@@ -6,7 +6,7 @@
 void int_arrf(int arr[], int n);
 int length_arr(int max, int min); 
 void double_arrf(double arr[], int n);
-long int findSize(char file_name[]);
+long int findSize(char file_name[]); 
 
 
 int main(){
@@ -33,23 +33,23 @@ int main(){
     fwrite(arr, sizeof(char), sizeof(arr), f);    
     fclose(f);
 
-    char file_name[] ={"arr.file"};
-    long int res=findSize(file_name);
+    char file_name[] ={"arr.file"}; // fajlnevenek hozzaadasa
+    long int res=findSize(file_name);   
     if(res!=-1)
-        printf("Size of the file is %ld bytes\n", res);
+        printf("Size of the file is %ld bytes\n", res); //eredmeny
     return 0;
 }
-long int findSize(char file_name[]){
-    FILE* fp = fopen(file_name, "r");
+long int findSize(char file_name[]){ //fajl meretet megtalalo fuggveny
+    FILE* fp = fopen(file_name, "r");  //fajl megetalalas
     if(fp == NULL){
-        printf("File not Found!\n");
+        printf("File not Found!\n"); 
         return -1;
     }
 
     fseek(fp, 0L, SEEK_END);
 
     //kiszamolja a fájl meretet
-    long int res = ftell(fp);
+    long int res = ftell(fp); 
     
     //bezarja a fajlt
     fclose(fp);
