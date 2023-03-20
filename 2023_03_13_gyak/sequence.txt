@@ -1,0 +1,13 @@
+title EXAM
+
+Teacher->Student1:Give to the test!
+Teacher->Student2:Give to the test!
+Teacher<--Student1:Give back to the test!
+Teacher<--Student2:Give back to the test!
+Teacher->Student1:Have been check the test!\nGive back to the student.
+Teacher->Student2:Have been check the test!\nGive back to the student.
+Student1->Teacher:Have been modified it.
+Student2->Teacher:Have been modified it.
+Teacher-->Result:The final result of the tests.
+
+
