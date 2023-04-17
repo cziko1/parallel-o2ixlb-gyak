@@ -1,0 +1,15 @@
+
+feladat:
+    Múltkori alkalommal:
+    - posix szálas példa vmiter.c - lpthread
+    - posix feladat 1-2 db
+    alg-ok ph.-osítás feladatokból 1-2 #include <omp.h>
+
+    Most:
+    - OpenMP 1-2 db
+    - példakódok /me-courses/parallel/algoritms/openmp 
+
+
+all:
+    gcc program.c -o program.exe -fopenmp
+
