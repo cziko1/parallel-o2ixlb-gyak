@@ -1,0 +1,6 @@
+Akinenek még nincs
+    - 4.ea OpenMP 1-2 feladat 
+Utána 
+    - 5.ea 
+    -OepnMPI 
+    

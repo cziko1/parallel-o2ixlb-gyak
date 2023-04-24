@@ -1,0 +1,26 @@
+1. képfeldolgozás
+	- konolucio
+	- homályosítás, él detektálás 
+2. Kriptográfia
+	-blokkos kódolás
+3. Részecske-raj módszerek (particle ...... Optimalization)
+	-Artificial Bee Colony
+	-Ant Colony Opt
+	-EM
+4. Numerikus módszerek
+5. Egyébb
+	- Részben-rendezett halmazról eldönteni, hogy háló-e?
+	- Fourier-sor fejtés --> Van egy sin fg-nk 
+	- véletlen prím tesztek.
+	- 
+Piller- Csomagalapú vizualizációt 
+	-CSP iroadlom
+	-5. előadás
+		- publish substyle model
+		- Channel -> topikok 
+
+	- GO-nak van egy saját channel típusa 
+	- elixir 
+	- raptor
+
+	-Összefésüléses rendezés
