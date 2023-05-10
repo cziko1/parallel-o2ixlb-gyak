@@ -1,0 +1,19 @@
+ALGORYTHMS(@array)
+//Input: array, n
+Length[] = N
+gap = n
+swapped = TRUE
+
+WHILE gap > 1 OR swapped
+    gap = floor(gap / 1.3)
+    IF gap < 1
+        gap = 1
+    swapped = FALSE
+    1 = 0
+
+    WHILE i + rap < n 
+        IF array[i] > array[i + gap]
+            swap array[i] WITH array[i + gap]
+            swapped = TRUE
+        i = i + 1
+RETURN (array)

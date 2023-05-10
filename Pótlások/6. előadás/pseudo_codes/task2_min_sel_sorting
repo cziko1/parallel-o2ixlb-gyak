@@ -1,0 +1,10 @@
+ALGORYTHMS(@array)
+//input: i=0, N=10
+    array[] <- N
+    FOR i <-  TO N-1
+        minIndex = i
+            FOR j <- i+1 TO n-1
+                IF array[j] < array[minIndex]
+                    minIndex = j
+            SWAP array[i] WITH array[minIndex]
+    RETURN(array)
