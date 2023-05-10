@@ -1,0 +1,4 @@
+2023.04.27 gyakorlat
+    -OpenMPI 
+        -Linux alatt (˙portable Virtual box)
+        

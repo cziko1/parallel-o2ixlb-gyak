@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
-#include <time.h>
 
 #define ARRAY_SIZE 4
 #define NUM_THREADS 2
@@ -25,14 +24,8 @@ void* multiplyValues(void* arg) {
 }
 
 int main() {
-    // Random number generator
-    srand(time(NULL));
-
-    // Create an element of the array
-    double array[ARRAY_SIZE];
-    for (int i = 0; i < ARRAY_SIZE; ++i) {
-        array[i] = (double)rand() / RAND_MAX; // Generate a random values
-    }
+    // Create an array
+    double array[ARRAY_SIZE] = {1.2, 2.5, 3.7, 4.1};
 
     // Divide the array into segments for each thread
     struct ThreadData threadData[NUM_THREADS];
@@ -40,7 +33,7 @@ int main() {
     int remainingSize = ARRAY_SIZE % NUM_THREADS;
     int startIndex = 0;
 
-    // Initialize thread data and create threads
+    // Initialize thread datas
     pthread_t threads[NUM_THREADS];
     for (int i = 0; i < NUM_THREADS; ++i) {
         int size = segmentSize;
@@ -55,12 +48,12 @@ int main() {
         pthread_create(&threads[i], NULL, multiplyValues, (void*)&threadData[i]);
     }
 
-    // Wait for threads to finish
+    // Wait for finish
     for (int i = 0; i < NUM_THREADS; ++i) {
         pthread_join(threads[i], NULL);
     }
 
-    // Calculate the final product
+    // Calculate
     double finalProduct = 1.0;
     for (int i = 0; i < NUM_THREADS; ++i) {
         finalProduct *= threadData[i].result;

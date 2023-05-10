@@ -20,7 +20,7 @@ int main(int arc, char **argv)
 
 float RNG_Double(float min, float max)
 {
-    float element = ((float)rand()) / RAND_MAX;
+    float element = ((float)rand()) / 10;
     float num = element * (max - min) + min;
     return num;
 }
