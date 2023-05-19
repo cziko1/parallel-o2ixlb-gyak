@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "stdio.h": "c",
+        "insertionsort.h": "c",
+        "parallelshelsort.h": "c",
+        "pthread.h": "c"
+    }
+}
