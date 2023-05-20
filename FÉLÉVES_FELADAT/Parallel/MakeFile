@@ -1,0 +1,2 @@
+All:
+	gcc -Iinclude src/main.c -o main.exe
