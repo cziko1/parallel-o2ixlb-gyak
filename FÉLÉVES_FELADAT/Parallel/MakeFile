@@ -1,2 +1,2 @@
 All:
-	gcc -Iinclude src/main.c -o main.exe
+	go run src/hello.go 
