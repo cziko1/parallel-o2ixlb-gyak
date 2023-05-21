@@ -95,13 +95,16 @@ func merge(array1, array2 []int) {
 func main() {
 	rand.Seed(time.Now().UnixNano())
 
-	array := generateRandomArray(100)
+	size := rand.Intn(50) + 25
 
-	fmt.Println("Before sorting:", array)
+	array := generateRandomArray(size)
+
+	fmt.Println("\nBefore sorting:", array)
 
 	parallelShellSort(array)
 
-	fmt.Println("After sorting:", array)
+	fmt.Println("\nAfter sorting:", array)
+
 }
 
 func generateRandomArray(size int) []int {
