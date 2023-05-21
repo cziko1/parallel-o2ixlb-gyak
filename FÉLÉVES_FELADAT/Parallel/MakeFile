@@ -1,2 +1,2 @@
 All:
-	go run src/hello.go 
+	go run main.go
