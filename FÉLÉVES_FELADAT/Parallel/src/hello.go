@@ -94,19 +94,19 @@ func merge(arr1, arr2 []int) {
 func main() {
 	rand.Seed(time.Now().UnixNano())
 
-	arr := generateRandomArray(100)
+	array := generateRandomArray(100)
 
-	fmt.Println("\nBefore sorting:", arr)
+	fmt.Println("\nBefore sorting:", array)
 
-	parallelShellSort(arr)
+	parallelShellSort(array)
 
-	fmt.Println("\n\nAfter sorting:", arr)
+	fmt.Println("\n\nAfter sorting:", array)
 }
 
 func generateRandomArray(size int) []int {
-	arr := make([]int, size)
+	array := make([]int, size)
 	for i := 0; i < size; i++ {
-		arr[i] = rand.Intn(100)
+		array[i] = rand.Intn(100)
 	}
-	return arr
+	return array
 }
