@@ -1,2 +1,0 @@
-All:
-	go run src/hello.go 
