@@ -6,8 +6,8 @@
 
 int randomNumber(){
     int random, max, min;
-    max=50;
-    min=10;
+    max=100;
+    min=50;
     srand(time(NULL));
     random=rand() % max+min;
     return random;

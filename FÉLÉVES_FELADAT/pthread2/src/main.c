@@ -2,6 +2,9 @@
 #include <stdlib.h>
 #include <pthread.h>
 
+//#include <time.h> // the time.h cannot measure the time if the code include threads or other other similiar things.
+#include <sys/time.h>   //cuz gettimeofday function to caőture the starting and ending.
+
 #include "insertionSort.h"
 #include "printArray.h"
 #include "sizeArray.h"
@@ -39,8 +42,9 @@ void* shellSortThread(void* arg) {
 }
 
 void parallelShellSort(int array[], int n) {
+
     int num_threads;
-    num_threads = randomNumber();
+    num_threads = randomNumber(); //85000
 
     pthread_t threads[num_threads];
     ThreadData thread_data[num_threads];
@@ -88,6 +92,13 @@ void parallelShellSort(int array[], int n) {
 int main() {
     //int array[] = {64, 34, 25, 12, 22, 11, 90};
     //int n = sizeof(array) / sizeof(array[0]);
+    
+    struct timeval start_time,  end_time;
+    double elapsed_time;
+
+    gettimeofday(&start_time, NULL); //Record the starting time!!
+    //Here the code to measure runtime goes
+   
     int n=sizeArray();
     int array[n];
 
@@ -100,6 +111,13 @@ int main() {
 
     printf("\nShell sorting:\n");
     printArray(array, n);
+
+    //End 
+    gettimeofday(&end_time, NULL); //Record ending
+
+    elapsed_time = (end_time.tv_sec - start_time.tv_sec) + (end_time.tv_usec - start_time.tv_usec) / 1000000.0;
+
+    printf("Elapsed time: %f seconds\n", elapsed_time);
 
 
     free(array);
