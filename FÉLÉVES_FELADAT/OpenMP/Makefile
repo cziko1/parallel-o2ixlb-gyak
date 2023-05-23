@@ -1,2 +1,2 @@
 All:
-	gcc -Iinclude src/randomNumber.c src/makeArray.c src/printArray.c src/main.c -o main.exe -fopenmp
+	gcc -Iinclude src/printArray.c src/makeArray.c src/randomNumber.c src/main.c -o main.exe -fopenmp

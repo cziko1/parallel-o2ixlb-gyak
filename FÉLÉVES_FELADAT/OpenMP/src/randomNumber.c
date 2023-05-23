@@ -14,6 +14,6 @@ int randNumber()
     srand(time(NULL));
 
     random = rand()%max-min;
-    
+        
     return random;
 }

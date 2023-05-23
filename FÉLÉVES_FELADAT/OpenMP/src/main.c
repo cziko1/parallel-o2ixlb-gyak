@@ -2,40 +2,61 @@
 #include <stdlib.h>
 #include <omp.h>
 
-#include "randomNumber.h"
-#include "makeArray.h"
 #include "printArray.h"
+#include "makeArray.h"
+#include "randomNumber.h"
 
-void shellSort(int array[], int count) {
+#include <sys/time.h>
+
+void shellSort(int arr[], int n) {
     int gap, i, j, temp;
 
-
-    for (gap = count / 2; gap > 0; gap /= 2) {
-        // Parallelize the insertion sort loop what is using OpenMP
-        #pragma omp parallel for shared(array, gap) private(i, j, temp)
-        for (i = gap; i < count; i++) {
-            temp = array[i];
+    // Start with a large gap, then reduce the gap
+    for (gap = n / 2; gap > 0; gap /= 2) {
+        // Parallelize the insertion sort loop using OpenMP
+        #pragma omp parallel for shared(arr, gap) private(i, j, temp)
+        for (i = gap; i < n; i++) {
+            temp = arr[i];
             j = i;
-            while (j >= gap && array[j - gap] > temp) {
-                array[j] = array[j - gap];
+
+            // Shift elements until the correct position is found
+            while (j >= gap && arr[j - gap] > temp) {
+                arr[j] = arr[j - gap];
                 j -= gap;
             }
 
-            array[j] = temp;
+            arr[j] = temp;
         }
     }
 }
 
 
-int main(){
-    int i, count;
-    count=randNumber();
-    int array[count];
-    makeArray(array, count);
-    printArray(array, count);
-    shellSort(array, count);
-    printf("\nShell sort:\n");
-    printArray(array, count);
+int main() {
+
+    struct timeval start_time, end_time;
+    double elapsed_time;
+
+    //starting measurment
+    gettimeofday(&start_time, time);
     
+    int n= 100000;//= randNumber();
+    int arr[n]; // = {12, 34, 54, 2, 3};
+
+    makeArray(arr,n);
+    printf("Original array: \n");
+    printArray(arr, n);
+
+    shellSort(arr, n);
+
+    printf("Sorted array: \n");
+    printArray(arr, n);
+
+    gettimeofday(&end_time, NULL); 
+    //end of the measurment 
+
+    elapsed_time = (end_time.tv_sec - start_time.tv_sec)+(end_time.tv_usec - start_time.tv_usec) / 1000000.0;
+
+    printf("\nElapsed time: %f seconds\n", elapsed_time);
+
     return 0;
 }
