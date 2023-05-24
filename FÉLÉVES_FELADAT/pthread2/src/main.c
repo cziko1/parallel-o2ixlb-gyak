@@ -5,7 +5,7 @@
 //#include <time.h> // the time.h cannot measure the time if the code include threads or other other similiar things.
 #include <sys/time.h>   //cuz gettimeofday function to caőture the starting and ending.
 
-#include "insertionSort.h"
+//#include "insertionSort.h" //dont need this! oops...
 #include "printArray.h"
 #include "sizeArray.h"
 #include "randomArray.h"
