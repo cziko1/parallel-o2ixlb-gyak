@@ -1,4 +1,4 @@
-## Miskolci Egyetem Párhuzamos Algotimusok
+## Miskolci Egyetem Párhuzamos Algoritmusok
 <sub>Ebben a repoban a Párhuzamos algorimusok gyakorlat gyakorlati feladatai lesznek feltöltve!</sub>
 
 > Egyetemi Polgár: Czikó Tivadar
