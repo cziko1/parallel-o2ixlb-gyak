@@ -16,7 +16,11 @@
 >> - Szálkezelésel (szálak számának változtatásával).
 >> - OpenMP C könyvtár segítségével.
 >> - Go (Golang) nyelvel való párhuzamosságnak megfelelő megvalósítása.
+>> Az alábbi ábrán az látható, hogy különböző technológiák mennyi idő alatt végzik el a számításokat.
+>> <img src="https://github.com/cziko1/parallel-o2ixlb-gyak/blob/main/chart2.jpg">
 
+<br>
+<br>
 <img src="https://github.com/cziko1/parallel-o2ixlb-gyak/blob/main/picture.PNG" width="97" height="102">
 
 ### Gyakorlatok:
